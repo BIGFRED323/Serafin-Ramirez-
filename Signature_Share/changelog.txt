@@ -1,0 +1,27 @@
+2.0 (2011.08.05)
+
+* adding preferences
+
+1.5.3 (2011.08.05)
+
+* adding Android Application Auto Updates (AAAU) Library
+
+1.5.2 (2011.08.04)
+
+* adding Flurry analytics
+
+1.5.2 (2011.08.04)
+
+* removing updates library
+
+1.5.1 (2011.03.08)
+
+* bug fix (default file names)
+
+1.5 (2011.03.02)
+
+* adding support for renaming files with captured signatures
+
+1.4 (2011.02.12)
+
+* initial release

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory android:title="@string/Canvas">
+    
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/Title"
+			android:title="@string/Title"
+			android:key="@string/key_Title" 
+			android:defaultValue="@string/default_value_Title"
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/Width"
+			android:title="@string/Width"
+			android:key="@string/key_Width" 
+			android:defaultValue="@string/default_value_Width"
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/Height"
+			android:title="@string/Height"
+			android:key="@string/key_Height" 
+			android:defaultValue="@string/default_value_Height"
+		/>
+ 
+	    <CheckBoxPreference 
+	    	android:key="@string/key_Crop" 
+	    	android:title="@string/Crop" 
+	    	android:defaultValue="@string/default_value_Crop"
+	    />
+	    
+	</PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/Pen">
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/StrokeWidth"
+			android:title="@string/StrokeWidth"
+			android:key="@string/key_StrokeWidth" 
+			android:numeric="integer" 
+			android:maxLength="2" 
+			android:defaultValue="@string/default_value_StrokeWidth"
+		/>
+	</PreferenceCategory>    
+</PreferenceScreen>
