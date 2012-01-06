@@ -209,7 +209,7 @@ public class MainActivity extends ListActivity {
 				Intent intent = 
 		        	new Intent("biz.binarysolutions.signature.CAPTURE");
 				
-				String keyInvoiceId   = "biz.binarysolutions.signature.InvoiceId";
+				String keyCode        = "biz.binarysolutions.signature.ActivationCode";
 				String keyFileName    = "biz.binarysolutions.signature.FileName";
 				String keyTitle       = "biz.binarysolutions.signature.Title";
 				String keyStrokeWidth = "biz.binarysolutions.signature.StrokeWidth";
@@ -225,7 +225,7 @@ public class MainActivity extends ListActivity {
 				String  width       = preferencesLoader.getWidth();
 				String  height      = preferencesLoader.getHeight();
 				
-		        intent.putExtra(keyInvoiceId, "");
+		        intent.putExtra(keyCode, "");
 		        intent.putExtra(keyFileName, fileName);
 		        intent.putExtra(keyTitle, title);
 		        intent.putExtra(keyStrokeWidth, strokeWidth);
