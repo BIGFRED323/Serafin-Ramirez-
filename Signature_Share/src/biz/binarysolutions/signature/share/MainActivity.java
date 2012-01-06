@@ -40,9 +40,7 @@ import com.flurry.android.FlurryAgent;
  */
 public class MainActivity extends ListActivity {
 	
-	private static final String LIBRARY_URL = 
-		"market://details?id=biz.binarysolutions.signature";
-	
+	private static final String LIBRARY_URL = "http://goo.gl/LqSN6";
 	private static final int CAPTURE_REQUEST_CODE = 0;
 	
 	private String signaturesFolder = null;
