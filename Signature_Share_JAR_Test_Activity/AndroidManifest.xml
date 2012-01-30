@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="biz.binarysolutions.signature.share.jar.activity"
+      android:versionCode="11"
+      android:versionName="2.0">
+      
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="9" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      
+    <application android:icon="@drawable/ic_launcher" 
+    	android:label="@string/app_name"
+    	android:debuggable="false"
+    	>
+    	
+        <activity android:name=".MainActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AboutActivity" 
+            android:theme="@style/NoTitleDialogTheme"
+        />
+        <activity android:name=".ApplicationSettings" />
+        
+		<!-- Signature Capture begin -->
+        <activity android:name="biz.binarysolutions.signature.Capture"
+        	android:label="@string/app_name"
+        	android:screenOrientation="landscape"
+        	android:configChanges="keyboardHidden|orientation"
+        	>
+            
+            <intent-filter>
+            	<action android:name="biz.binarysolutions.signature.CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <!-- Signature Capture end -->       
+        
+    </application>
+    
+    <supports-screens
+       android:largeScreens="true"
+       android:normalScreens="true"
+       android:smallScreens="true"
+       android:anyDensity="true" 
+    />     
+
+</manifest> 

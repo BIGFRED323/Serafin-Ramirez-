@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+    	android:title="@string/biz_binarysolutions_signature_Clear" 
+    	android:id="@+id/biz_binarysolutions_signature_menuItemClear"
+    	android:icon="@android:drawable/ic_menu_close_clear_cancel" 
+    />
+    <item 
+    	android:title="@string/biz_binarysolutions_signature_Done" 
+    	android:id="@+id/biz_binarysolutions_signature_menuItemDone"
+    	android:icon="@drawable/ic_menu_mark"
+    />
+</menu>
