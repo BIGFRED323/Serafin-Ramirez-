@@ -5,5 +5,6 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="lib" path="X:/__JL_DEV_TEMP_DO_NOT_DELETE/ProgramFiles/android-libs/flurry/Flurry_Android_SDK_v2.01/FlurryAgent.jar"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="X:/__JL_DEV_TEMP_DO_NOT_DELETE/ProgramFiles/android-libs/acra-4.2.3/build/acra-4.2.3.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
