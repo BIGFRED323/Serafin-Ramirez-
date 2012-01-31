@@ -154,6 +154,7 @@ public class MainActivity extends ListActivity {
 				String keyFileName    = "biz.binarysolutions.signature.FileName";
 				String keyTitle       = "biz.binarysolutions.signature.Title";
 				String keyStrokeWidth = "biz.binarysolutions.signature.StrokeWidth";
+				String keyStrokeColor = "biz.binarysolutions.signature.StrokeColor";
 				String keyCrop        = "biz.binarysolutions.signature.Crop";
 				String keyWidth       = "biz.binarysolutions.signature.Width";
 				String keyHeight      = "biz.binarysolutions.signature.Height";
@@ -162,6 +163,7 @@ public class MainActivity extends ListActivity {
 				
 				String  title       = preferencesLoader.getTitle(); 
 				int     strokeWidth = preferencesLoader.getStrokeWidth();
+				String  strokeColor = preferencesLoader.getStrokeColor();
 				boolean crop        = preferencesLoader.getCrop();
 				String  width       = preferencesLoader.getWidth();
 				String  height      = preferencesLoader.getHeight();
@@ -169,6 +171,7 @@ public class MainActivity extends ListActivity {
 		        intent.putExtra(keyFileName, fileName);
 		        intent.putExtra(keyTitle, title);
 		        intent.putExtra(keyStrokeWidth, strokeWidth);
+		        intent.putExtra(keyStrokeColor, strokeColor);
 		        intent.putExtra(keyCrop, crop);
 		        intent.putExtra(keyWidth, width);
 		        intent.putExtra(keyHeight, height);

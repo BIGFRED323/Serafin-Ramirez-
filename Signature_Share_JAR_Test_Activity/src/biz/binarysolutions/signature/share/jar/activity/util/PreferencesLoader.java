@@ -52,6 +52,18 @@ public class PreferencesLoader {
 			return Integer.parseInt(defaultValue);
 		}
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getStrokeColor() {
+		
+		String key          = activity.getString(R.string.key_StrokeColor);
+		String defaultValue = activity.getString(R.string.default_value_StrokeColor);
+		
+		return preferences.getString(key, defaultValue);
+	}	
 
 	/**
 	 * 
@@ -62,7 +74,7 @@ public class PreferencesLoader {
 		String key          = activity.getString(R.string.key_Crop);
 		String defaultValue = activity.getString(R.string.default_value_Crop);
 		
-		return preferences.getBoolean(key, Boolean.getBoolean(defaultValue));
+		return preferences.getBoolean(key, Boolean.parseBoolean(defaultValue));
 	}
 
 	/**

@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Android_Commons"/>
-	<classpathentry kind="lib" path="X:/__JL_DEV_TEMP_DO_NOT_DELETE/ProgramFiles/android-libs/signature-capture/5.0/signature-capture-5.0.jar"/>
+	<classpathentry kind="lib" path="X:/__JL_DEV_TEMP_DO_NOT_DELETE/ProgramFiles/android-libs/signature-capture/5.1/signature-capture-5.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
