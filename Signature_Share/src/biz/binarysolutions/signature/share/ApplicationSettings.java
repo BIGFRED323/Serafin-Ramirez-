@@ -18,11 +18,13 @@ public class ApplicationSettings extends PreferenceActivity
 	private String keyWidth;
 	private String keyHeight;
 	private String keyStrokeWidth;
+	private String keyStrokeColor;
 	
 	private EditTextPreference preferenceTitle;
 	private EditTextPreference preferenceWidth;
 	private EditTextPreference preferenceHeight;
 	private EditTextPreference preferenceStrokeWidth;
+	private EditTextPreference preferenceStrokeColor;
 	
 
     @Override
@@ -33,6 +35,7 @@ public class ApplicationSettings extends PreferenceActivity
         keyWidth       = getString(R.string.key_Width);
         keyHeight      = getString(R.string.key_Height);
         keyStrokeWidth = getString(R.string.key_StrokeWidth);
+        keyStrokeColor = getString(R.string.key_StrokeColor);
        
         addPreferencesFromResource(R.xml.preferences);
     }
@@ -50,11 +53,14 @@ public class ApplicationSettings extends PreferenceActivity
         	(EditTextPreference) preferenceScreen.findPreference(keyHeight);
         preferenceStrokeWidth = 
         	(EditTextPreference) preferenceScreen.findPreference(keyStrokeWidth);
+        preferenceStrokeColor = 
+        	(EditTextPreference) preferenceScreen.findPreference(keyStrokeColor);
         
         preferenceTitle.setSummary(preferenceTitle.getText());
         preferenceWidth.setSummary(preferenceWidth.getText());
         preferenceHeight.setSummary(preferenceHeight.getText());
         preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
+        preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
         
         getPreferenceScreen().
         	getSharedPreferences().
@@ -85,7 +91,8 @@ public class ApplicationSettings extends PreferenceActivity
             preferenceHeight.setSummary(preferenceHeight.getText());
         } else if (key.equals(keyStrokeWidth)) {
             preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
+        } else if (key.equals(keyStrokeColor)) {
+            preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
         }
 	}
-
 }

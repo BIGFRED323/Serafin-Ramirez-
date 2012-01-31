@@ -50,5 +50,14 @@
 			android:maxLength="2" 
 			android:defaultValue="@string/default_value_StrokeWidth"
 		/>
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/StrokeColor"
+			android:title="@string/StrokeColor"
+			android:key="@string/key_StrokeColor" 
+			android:maxLength="8" 
+			android:defaultValue="@string/default_value_StrokeColor"
+		/>
 	</PreferenceCategory>    
 </PreferenceScreen>
