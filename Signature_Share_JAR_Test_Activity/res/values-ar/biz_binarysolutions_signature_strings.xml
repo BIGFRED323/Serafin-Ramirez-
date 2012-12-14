@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="biz_binarysolutions_signature_ProgressMessage">جاري الحفظ. يرجى الانتظار &#8230;</string>
+    <string name="biz_binarysolutions_signature_ToastMessage">رجا قم بحفظ او تجاهل التوقيع اولا</string>
+</resources>

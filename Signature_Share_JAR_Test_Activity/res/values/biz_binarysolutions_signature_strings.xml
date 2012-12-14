@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="biz_binarysolutions_signature_ProgressMessage">Saving. Please wait...</string>
+    <string name="biz_binarysolutions_signature_ProgressMessage">Saving. Please wait &#8230;</string>
+    <string name="biz_binarysolutions_signature_ToastMessage">Please save or discard the signature first.</string>
 </resources>

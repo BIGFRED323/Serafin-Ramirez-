@@ -4,10 +4,12 @@
     	android:title="@string/biz_binarysolutions_signature_Clear" 
     	android:id="@+id/biz_binarysolutions_signature_menuItemClear"
     	android:icon="@android:drawable/ic_menu_close_clear_cancel" 
+    	android:showAsAction="ifRoom"
     />
     <item 
     	android:title="@string/biz_binarysolutions_signature_Save" 
     	android:id="@+id/biz_binarysolutions_signature_menuItemSave"
     	android:icon="@android:drawable/ic_menu_save"
+    	android:showAsAction="ifRoom"
     />
 </menu>
