@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="biz.binarysolutions.signature.share"
     android:versionCode="14"
-	android:versionName="2.3">
+	android:versionName="2.3"
+	android:installLocation="auto"
+	>
       
     <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="17" />
     
