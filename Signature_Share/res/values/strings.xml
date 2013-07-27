@@ -4,7 +4,6 @@
     <string name="app_folder">Signature_Share</string>
     
     <string name="Error">Error</string>
-    <string name="Cancel">Cancel</string>
     
     <string name="LibraryMissing">Library missing</string>
     <string name="LibraryMissingMessage">In order to capture signatures you need to install missing library.</string>

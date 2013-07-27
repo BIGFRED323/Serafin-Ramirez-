@@ -5,7 +5,7 @@
     <PreferenceCategory android:title="@string/Canvas">
     
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/Title"
 			android:title="@string/Title"
@@ -14,7 +14,7 @@
 		/>
 		
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/Width"
 			android:title="@string/Width"
@@ -23,7 +23,7 @@
 		/>
 		
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/Height"
 			android:title="@string/Height"
@@ -38,7 +38,7 @@
 	    />
 	    
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/BackgroundColor"
 			android:title="@string/BackgroundColor"
@@ -51,7 +51,7 @@
     
     <PreferenceCategory android:title="@string/Pen">
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/StrokeWidth"
 			android:title="@string/StrokeWidth"
@@ -61,7 +61,7 @@
 			android:defaultValue="@string/default_value_StrokeWidth"
 		/>
 		<EditTextPreference 
-			android:negativeButtonText="@string/Cancel" 
+			android:negativeButtonText="@android:string/cancel" 
 			android:positiveButtonText="@string/Set" 
 			android:dialogTitle="@string/StrokeColor"
 			android:title="@string/StrokeColor"

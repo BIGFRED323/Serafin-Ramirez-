@@ -54,6 +54,14 @@ public class MainActivity extends ListActivity {
 	 * 
 	 * @return
 	 */
+	private boolean shouldDisplayWarningDialog() {
+		return true;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	private boolean isCaptureLibraryInstalled() {
 	
 	    PackageManager pm = getPackageManager();
@@ -79,9 +87,10 @@ public class MainActivity extends ListActivity {
 		}
 		
 		new AlertDialog.Builder(this)
+			.setIcon(android.R.drawable.ic_dialog_alert)
 			.setTitle(R.string.Error)
 			.setMessage(errorMessage)
-			.setPositiveButton(R.string.OK, null)
+			.setPositiveButton(android.R.string.ok, null)
 			.show();		
 	}
 	
@@ -111,7 +120,7 @@ public class MainActivity extends ListActivity {
 			.setTitle(R.string.LibraryMissing)
 			.setMessage(R.string.LibraryMissingMessage)
 			.setPositiveButton(R.string.Install, listener)
-			.setNegativeButton(R.string.Cancel, null)
+			.setNegativeButton(android.R.string.cancel, null)
 			.show();
 	}
 	
@@ -164,9 +173,41 @@ public class MainActivity extends ListActivity {
 		new AlertDialog.Builder(this)
 			.setTitle(R.string.Rename)
 			.setView(view)
-			.setPositiveButton(R.string.OK, listener)
-			.setNegativeButton(R.string.Cancel, null)
+			.setPositiveButton(android.R.string.ok, listener)
+			.setNegativeButton(android.R.string.cancel, null)
 			.show();
+	}
+
+	/**
+	 * 
+	 */
+	private void displayErrorDialog() {
+		
+		if (isFinishing()) {
+			return;
+		}
+	
+		new AlertDialog.Builder(this)
+			.setIcon(android.R.drawable.ic_dialog_alert)
+			.setTitle(R.string.Error)
+			.setMessage(R.string.ErrorFolder)
+			.setPositiveButton(android.R.string.ok, null)
+			.show();
+	}
+
+	/**
+	 * @param id 
+	 * 
+	 */
+	private void displayWarningDialog(long id) {
+		
+		new AlertDialog.Builder(this)
+			.setIcon(android.R.drawable.ic_dialog_alert)
+			.setTitle(android.R.string.dialog_alert_title)
+//			.setView(view)
+			.setPositiveButton(android.R.string.ok, null)
+			.setNegativeButton(android.R.string.cancel, null)
+			.show();		
 	}
 
 	/**
@@ -276,22 +317,6 @@ public class MainActivity extends ListActivity {
 	}
 
 	/**
-	 * 
-	 */
-	private void displayErrorDialog() {
-		
-		if (isFinishing()) {
-			return;
-		}
-	
-		new AlertDialog.Builder(this)
-			.setTitle(R.string.Error)
-			.setMessage(R.string.ErrorFolder)
-			.setPositiveButton(R.string.OK, null)
-			.show();
-	}
-	
-	/**
 	 * @param id 
 	 * 
 	 */
@@ -381,18 +406,12 @@ public class MainActivity extends ListActivity {
 		readCapturedFiles();
 	}
 
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStart()
-	 */
 	@Override
 	protected void onStart() {
 		super.onStart();
 		FlurryAgent.onStartSession(this, getString(R.string.flurry_app_key)); 
 	}
 
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
 	@Override
 	protected void onStop() {
 		super.onStop();
@@ -421,7 +440,11 @@ public class MainActivity extends ListActivity {
 		switch (item.getItemId()) {
 
 		case R.id.contextMenuItemView:
-			viewFile(info.id);
+			if (shouldDisplayWarningDialog()) {
+				displayWarningDialog(info.id);
+			} else {
+				viewFile(info.id);
+			}
 			return true;
 
 		case R.id.contextMenuItemShare:
