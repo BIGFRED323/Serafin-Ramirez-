@@ -12,10 +12,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
     <supports-screens
-       android:largeScreens="true"
-       android:normalScreens="true"
-       android:smallScreens="true"
-       android:anyDensity="true" 
+        android:xlargeScreens="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:anyDensity="true" 
     />     
       
     <application android:icon="@drawable/ic_launcher"
