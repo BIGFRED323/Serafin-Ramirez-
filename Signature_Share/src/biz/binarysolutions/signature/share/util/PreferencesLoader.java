@@ -100,4 +100,16 @@ public class PreferencesLoader {
 		
 		return preferences.getString(key, defaultValue);
 	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getBackgroundColor() {
+		
+		String key          = activity.getString(R.string.key_BackgroundColor);
+		String defaultValue = activity.getString(R.string.default_value_BackgroundColor);
+		
+		return preferences.getString(key, defaultValue);
+	}
 }

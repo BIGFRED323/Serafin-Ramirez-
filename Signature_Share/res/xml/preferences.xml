@@ -37,6 +37,16 @@
 	    	android:defaultValue="@string/default_value_Crop"
 	    />
 	    
+		<EditTextPreference 
+			android:negativeButtonText="@string/Cancel" 
+			android:positiveButtonText="@string/Set" 
+			android:dialogTitle="@string/BackgroundColor"
+			android:title="@string/BackgroundColor"
+			android:key="@string/key_BackgroundColor" 
+			android:maxLength="8" 
+			android:defaultValue="@string/default_value_BackgroundColor"
+		/>	    
+	    
 	</PreferenceCategory>
     
     <PreferenceCategory android:title="@string/Pen">

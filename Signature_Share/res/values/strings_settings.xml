@@ -11,6 +11,7 @@
 	<string name="Width">Width</string>
 	<string name="Height">Height</string>
 	<string name="Crop">Crop</string>
+	<string name="BackgroundColor">Background Color</string>
 	<string name="StrokeWidth">Stroke Width</string>
 	<string name="StrokeColor">Stroke Color</string>
 	
@@ -18,6 +19,7 @@
 	<string name="key_Width">key_Width</string>
 	<string name="key_Height">key_Height</string>
 	<string name="key_Crop">key_Crop</string>
+	<string name="key_BackgroundColor">key_BackgroundColor</string>
 	<string name="key_StrokeWidth">key_StrokeWidth</string>
 	<string name="key_StrokeColor">key_StrokeColor</string>
 	
@@ -25,6 +27,7 @@
 	<string name="default_value_Width">0</string>
 	<string name="default_value_Height">0</string>
 	<string name="default_value_Crop">false</string>
+	<string name="default_value_BackgroundColor">00000000</string>
 	<string name="default_value_StrokeWidth">8</string>
 	<string name="default_value_StrokeColor">FF000000</string>
 	

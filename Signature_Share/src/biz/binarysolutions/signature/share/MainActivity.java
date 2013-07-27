@@ -215,6 +215,8 @@ public class MainActivity extends ListActivity {
 				String keyCrop        = "biz.binarysolutions.signature.Crop";
 				String keyWidth       = "biz.binarysolutions.signature.Width";
 				String keyHeight      = "biz.binarysolutions.signature.Height";
+				String keyBackgroundColor = 
+					"biz.binarysolutions.signature.BackgroundColor";
 				
 				String fileName = getFileName();
 				
@@ -224,6 +226,7 @@ public class MainActivity extends ListActivity {
 				boolean crop        = preferencesLoader.getCrop();
 				String  width       = preferencesLoader.getWidth();
 				String  height      = preferencesLoader.getHeight();
+				String  backgroundColor = preferencesLoader.getBackgroundColor();
 				
 		        intent.putExtra(keyCode, "");
 		        intent.putExtra(keyFileName, fileName);
@@ -233,6 +236,7 @@ public class MainActivity extends ListActivity {
 		        intent.putExtra(keyCrop, crop);
 		        intent.putExtra(keyWidth, width);
 		        intent.putExtra(keyHeight, height);
+		        intent.putExtra(keyBackgroundColor, backgroundColor);
 		        
 		        intent.setComponent(
 		    		new ComponentName(

@@ -17,12 +17,14 @@ public class ApplicationSettings extends PreferenceActivity
 	private String keyTitle;
 	private String keyWidth;
 	private String keyHeight;
+	private String keyBackgroundColor;
 	private String keyStrokeWidth;
 	private String keyStrokeColor;
 	
 	private EditTextPreference preferenceTitle;
 	private EditTextPreference preferenceWidth;
 	private EditTextPreference preferenceHeight;
+	private EditTextPreference preferenceBackgroundColor;
 	private EditTextPreference preferenceStrokeWidth;
 	private EditTextPreference preferenceStrokeColor;
 	
@@ -31,11 +33,12 @@ public class ApplicationSettings extends PreferenceActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        keyTitle       = getString(R.string.key_Title);
-        keyWidth       = getString(R.string.key_Width);
-        keyHeight      = getString(R.string.key_Height);
-        keyStrokeWidth = getString(R.string.key_StrokeWidth);
-        keyStrokeColor = getString(R.string.key_StrokeColor);
+        keyTitle           = getString(R.string.key_Title);
+        keyWidth           = getString(R.string.key_Width);
+        keyHeight          = getString(R.string.key_Height);
+        keyBackgroundColor = getString(R.string.key_BackgroundColor);
+        keyStrokeWidth     = getString(R.string.key_StrokeWidth);
+        keyStrokeColor     = getString(R.string.key_StrokeColor);
        
         addPreferencesFromResource(R.xml.preferences);
     }
@@ -51,6 +54,8 @@ public class ApplicationSettings extends PreferenceActivity
         	(EditTextPreference) preferenceScreen.findPreference(keyWidth);
         preferenceHeight = 
         	(EditTextPreference) preferenceScreen.findPreference(keyHeight);
+        preferenceBackgroundColor = 
+        	(EditTextPreference) preferenceScreen.findPreference(keyBackgroundColor);
         preferenceStrokeWidth = 
         	(EditTextPreference) preferenceScreen.findPreference(keyStrokeWidth);
         preferenceStrokeColor = 
@@ -59,6 +64,7 @@ public class ApplicationSettings extends PreferenceActivity
         preferenceTitle.setSummary(preferenceTitle.getText());
         preferenceWidth.setSummary(preferenceWidth.getText());
         preferenceHeight.setSummary(preferenceHeight.getText());
+        preferenceBackgroundColor.setSummary(preferenceBackgroundColor.getText());
         preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
         preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
         
@@ -89,7 +95,9 @@ public class ApplicationSettings extends PreferenceActivity
             preferenceWidth.setSummary(preferenceWidth.getText());
         } else if (key.equals(keyHeight)) {
             preferenceHeight.setSummary(preferenceHeight.getText());
-        } else if (key.equals(keyStrokeWidth)) {
+        } else if (key.equals(keyBackgroundColor)) {
+        	preferenceBackgroundColor.setSummary(preferenceBackgroundColor.getText());
+		} else if (key.equals(keyStrokeWidth)) {
             preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
         } else if (key.equals(keyStrokeColor)) {
             preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
