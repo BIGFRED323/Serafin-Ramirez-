@@ -25,7 +25,7 @@
 	<string name="default_value_Width">0</string>
 	<string name="default_value_Height">0</string>
 	<string name="default_value_Crop">false</string>
-	<string name="default_value_StrokeWidth">12</string>
+	<string name="default_value_StrokeWidth">8</string>
 	<string name="default_value_StrokeColor">FF000000</string>
 	
 </resources>
