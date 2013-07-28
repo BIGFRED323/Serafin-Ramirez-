@@ -70,4 +70,12 @@
 			android:defaultValue="@string/default_value_StrokeColor"
 		/>
 	</PreferenceCategory>    
+	
+    <PreferenceCategory android:title="@string/Misc">
+        <CheckBoxPreference 
+	    	android:key="@string/key_ShowWarning" 
+	    	android:title="@string/ShowWarning" 
+	    	android:defaultValue="@string/default_value_ShowWarning"
+	    />
+    </PreferenceCategory>
 </PreferenceScreen>

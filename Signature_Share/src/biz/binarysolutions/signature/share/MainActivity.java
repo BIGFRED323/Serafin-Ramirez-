@@ -25,12 +25,15 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import biz.binarysolutions.android.lib.aaau.services.CheckUpdateService;
 import biz.binarysolutions.signature.share.tasks.ReadCapturedFilesTask;
 import biz.binarysolutions.signature.share.util.FileUtil;
 import biz.binarysolutions.signature.share.util.PNGFile;
-import biz.binarysolutions.signature.share.util.PreferencesLoader;
+import biz.binarysolutions.signature.share.util.PreferencesHandler;
 
 import com.flurry.android.FlurryAgent;
 
@@ -48,14 +51,14 @@ public class MainActivity extends ListActivity {
 	private ArrayList<File>    files = new ArrayList<File>();
 	private ArrayAdapter<File> adapter;
 	
-	private PreferencesLoader preferencesLoader;
+	private PreferencesHandler preferencesHandler;
 	
 	/**
 	 * 
 	 * @return
 	 */
 	private boolean shouldDisplayWarningDialog() {
-		return true;
+		return preferencesHandler.getShowWarning();
 	}
 	
 	/**
@@ -199,13 +202,39 @@ public class MainActivity extends ListActivity {
 	 * @param id 
 	 * 
 	 */
-	private void displayWarningDialog(long id) {
+	private void displayWarningDialog(final long id) {
+		
+		if (isFinishing()) {
+			return;
+		}
+		
+		LayoutInflater inflater = getLayoutInflater();
+		View view = inflater.inflate(R.layout.dialog_warning, null);
+		
+		CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBoxShowWarning);
+		checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton cb, boolean isChecked) {
+				preferencesHandler.setShowWarning(!isChecked);
+			}
+		});
+		
+		DialogInterface.OnClickListener listener = 
+			new DialogInterface.OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+					viewFile(id);
+				}
+			
+		};
 		
 		new AlertDialog.Builder(this)
 			.setIcon(android.R.drawable.ic_dialog_alert)
 			.setTitle(android.R.string.dialog_alert_title)
-//			.setView(view)
-			.setPositiveButton(android.R.string.ok, null)
+			.setView(view)
+			.setPositiveButton(android.R.string.ok, listener)
 			.setNegativeButton(android.R.string.cancel, null)
 			.show();		
 	}
@@ -261,13 +290,13 @@ public class MainActivity extends ListActivity {
 				
 				String fileName = getFileName();
 				
-				String  title       = preferencesLoader.getTitle(); 
-				int     strokeWidth = preferencesLoader.getStrokeWidth();
-				String  strokeColor = preferencesLoader.getStrokeColor();
-				boolean crop        = preferencesLoader.getCrop();
-				String  width       = preferencesLoader.getWidth();
-				String  height      = preferencesLoader.getHeight();
-				String  backgroundColor = preferencesLoader.getBackgroundColor();
+				String  title       = preferencesHandler.getTitle(); 
+				int     strokeWidth = preferencesHandler.getStrokeWidth();
+				String  strokeColor = preferencesHandler.getStrokeColor();
+				boolean crop        = preferencesHandler.getCrop();
+				String  width       = preferencesHandler.getWidth();
+				String  height      = preferencesHandler.getHeight();
+				String  backgroundColor = preferencesHandler.getBackgroundColor();
 				
 		        intent.putExtra(keyCode, "");
 		        intent.putExtra(keyFileName, fileName);
@@ -396,7 +425,7 @@ public class MainActivity extends ListActivity {
         	displayInstallLibraryDialog();
 		}
         
-        preferencesLoader = new PreferencesLoader(MainActivity.this);
+        preferencesHandler = new PreferencesHandler(MainActivity.this);
     }
     
 	@Override

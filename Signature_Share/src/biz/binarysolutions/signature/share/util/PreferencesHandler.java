@@ -9,7 +9,7 @@ import biz.binarysolutions.signature.share.R;
  * 
  *
  */
-public class PreferencesLoader {
+public class PreferencesHandler {
 	
 	private Activity activity;
 	private SharedPreferences preferences;
@@ -18,7 +18,7 @@ public class PreferencesLoader {
 	 * 
 	 * @param activity
 	 */
-	public PreferencesLoader(Activity activity) {
+	public PreferencesHandler(Activity activity) {
 		this.activity = activity;
 		preferences = PreferenceManager.getDefaultSharedPreferences(activity);
 	}
@@ -111,5 +111,27 @@ public class PreferencesLoader {
 		String defaultValue = activity.getString(R.string.default_value_BackgroundColor);
 		
 		return preferences.getString(key, defaultValue);
+	}
+
+	/**
+	 * 
+	 * @param showWarning
+	 */
+	public void setShowWarning(boolean showWarning) {
+		
+		String key = activity.getString(R.string.key_ShowWarning);
+		preferences.edit().putBoolean(key, showWarning).commit();
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean getShowWarning() {
+
+		String key          = activity.getString(R.string.key_ShowWarning);
+		String defaultValue = activity.getString(R.string.default_value_ShowWarning);
+		
+		return preferences.getBoolean(key, Boolean.parseBoolean(defaultValue));
 	}
 }

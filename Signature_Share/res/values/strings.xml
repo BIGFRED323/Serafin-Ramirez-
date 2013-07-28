@@ -19,4 +19,7 @@
     
     <string name="PNG">.png</string>
     
+    <string name="WarningMessage">Some android image viewers do not show transparent background properly. For this reason your captured signature might be shown as completely black image. If you open the same image on your PC you will notice that nothing is wrong and that it has been saved properly.</string>
+    <string name="DoNotShow">Do not show this message again</string>
+    
 </resources>
