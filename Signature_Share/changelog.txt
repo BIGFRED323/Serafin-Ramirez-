@@ -1,8 +1,14 @@
-2.3 (2013.07.xx)
+2.3 (2013.07.30)
 
 * built with Android 4.2
 * removing ACRA
 * updating 3rd party libraries
+* showing menu items in action bar
+* updating copyright year
+* allowing installation on SD card
+* using 8 as default stroke width
+* adding option to change signature background color (in app settings)
+* displaying warning message before starting external viewer app
 
 
 2.2 (2012.01.31)
