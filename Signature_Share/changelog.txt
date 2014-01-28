@@ -1,3 +1,8 @@
+2.3.1 (2014.01.28)
+
+* displaying warning message inside scroll view
+
+
 2.3 (2013.07.30)
 
 * built with Android 4.2
