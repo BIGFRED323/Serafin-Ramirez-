@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import biz.binarysolutions.android.commons.DimensionConverter;
+import biz.binarysolutions.android.commons.StringUtil;
 
 /**
- * 
+ * TODO: add color picker
+ * http://code.google.com/p/color-picker-view/
  *
  */
 public class ApplicationSettings extends PreferenceActivity 
@@ -28,8 +33,47 @@ public class ApplicationSettings extends PreferenceActivity
 	private EditTextPreference preferenceStrokeWidth;
 	private EditTextPreference preferenceStrokeColor;
 	
+	/**
+	 * 
+	 * @return
+	 */
+	private int getMaxScreenDimension() {
+		
+		Display display = getWindowManager().getDefaultDisplay();
+		
+		int width  = display.getWidth();
+    	int height = display.getHeight();
+    	int max    = (width > height) ? width : height;
 
-    @Override
+    	return max;
+	}
+
+	/**
+	 * 
+	 * @param preference
+	 */
+    private void roundToMaxScreenDimension(EditTextPreference preference) {
+    	
+    	String dimension = preference.getText();
+    	if (StringUtil.doesExist(dimension)) {
+			
+    		DisplayMetrics metrics = DimensionConverter.getDisplayMetrics(this);
+    		try {
+				int px  = DimensionConverter.stringToPixel(dimension, metrics);
+				int max = getMaxScreenDimension();
+				
+				if (px > max) {
+					preference.setText(String.valueOf(max));
+				}
+			} catch (Exception e) {
+				preference.setText(String.valueOf(0));
+			}
+		} else {
+			preference.setText(String.valueOf(0));
+		}
+	}
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -92,8 +136,10 @@ public class ApplicationSettings extends PreferenceActivity
 		if (key.equals(keyTitle)) {
             preferenceTitle.setSummary(preferenceTitle.getText());
         } else if (key.equals(keyWidth)) {
+        	roundToMaxScreenDimension(preferenceWidth);
             preferenceWidth.setSummary(preferenceWidth.getText());
         } else if (key.equals(keyHeight)) {
+        	roundToMaxScreenDimension(preferenceHeight);
             preferenceHeight.setSummary(preferenceHeight.getText());
         } else if (key.equals(keyBackgroundColor)) {
         	preferenceBackgroundColor.setSummary(preferenceBackgroundColor.getText());
