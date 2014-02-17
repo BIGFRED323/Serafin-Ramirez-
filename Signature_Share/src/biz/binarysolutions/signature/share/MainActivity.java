@@ -29,6 +29,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import biz.binarysolutions.android.commons.InstallUtil;
 import biz.binarysolutions.android.lib.aaau.services.CheckUpdateService;
 import biz.binarysolutions.signature.share.tasks.ReadCapturedFilesTask;
 import biz.binarysolutions.signature.share.util.FileUtil;
@@ -43,7 +44,9 @@ import com.flurry.android.FlurryAgent;
  */
 public class MainActivity extends ListActivity {
 	
-	private static final String LIBRARY_URL = "http://goo.gl/LqSN6";
+	private static final String LIBRARY_URL  = "http://goo.gl/LqSN6";
+	private static final String PACKAGE_NAME = "biz.binarysolutions.signature";
+	
 	private static final int CAPTURE_REQUEST_CODE = 0;
 	
 	private String signaturesFolder = null;
@@ -100,6 +103,26 @@ public class MainActivity extends ListActivity {
 	/**
 	 * 
 	 */
+	private void installLibrary() {
+		
+		PackageManager pm = getPackageManager();
+		
+		if (InstallUtil.isSlideMeStoreAvailable(pm, PACKAGE_NAME)) {
+			InstallUtil.installFromSlideMeStore(this, PACKAGE_NAME);
+		} else if (InstallUtil.isSamsungAppStoreAvailable(pm, PACKAGE_NAME)) {
+			InstallUtil.installFromSamsungAppStore(this, PACKAGE_NAME);
+		} else {
+			
+			Uri    uri    = Uri.parse(LIBRARY_URL);
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			
+			startActivity(intent);		
+		}
+	}
+	
+	/**
+	 * 
+	 */
 	private void displayInstallLibraryDialog() {
 		
 		if (isFinishing()) {
@@ -108,14 +131,9 @@ public class MainActivity extends ListActivity {
 		
 		DialogInterface.OnClickListener listener = 
 			new DialogInterface.OnClickListener() {
-			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-
-				Uri    uri    = Uri.parse(LIBRARY_URL);
-				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-				
-				startActivity(intent);
+				installLibrary();
 			}
 		};
 		
