@@ -1,3 +1,8 @@
+2.4 (2014.09.30)
+
+* adding support for background images
+
+
 2.3.2 (2014.02.17)
 
 * updating library installation dialog

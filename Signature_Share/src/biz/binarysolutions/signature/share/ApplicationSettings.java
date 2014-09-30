@@ -25,6 +25,7 @@ public class ApplicationSettings extends PreferenceActivity
 	private String keyBackgroundColor;
 	private String keyStrokeWidth;
 	private String keyStrokeColor;
+	private String keyBackgroundImage;
 	
 	private EditTextPreference preferenceTitle;
 	private EditTextPreference preferenceWidth;
@@ -32,6 +33,7 @@ public class ApplicationSettings extends PreferenceActivity
 	private EditTextPreference preferenceBackgroundColor;
 	private EditTextPreference preferenceStrokeWidth;
 	private EditTextPreference preferenceStrokeColor;
+	private EditTextPreference preferenceBackgroundImage;
 	
 	/**
 	 * 
@@ -83,6 +85,7 @@ public class ApplicationSettings extends PreferenceActivity
         keyBackgroundColor = getString(R.string.key_BackgroundColor);
         keyStrokeWidth     = getString(R.string.key_StrokeWidth);
         keyStrokeColor     = getString(R.string.key_StrokeColor);
+        keyBackgroundImage = getString(R.string.key_BackgroundImage);
        
         addPreferencesFromResource(R.xml.preferences);
     }
@@ -104,6 +107,8 @@ public class ApplicationSettings extends PreferenceActivity
         	(EditTextPreference) preferenceScreen.findPreference(keyStrokeWidth);
         preferenceStrokeColor = 
         	(EditTextPreference) preferenceScreen.findPreference(keyStrokeColor);
+        preferenceBackgroundImage = 
+        	(EditTextPreference) preferenceScreen.findPreference(keyBackgroundImage);
         
         preferenceTitle.setSummary(preferenceTitle.getText());
         preferenceWidth.setSummary(preferenceWidth.getText());
@@ -111,6 +116,7 @@ public class ApplicationSettings extends PreferenceActivity
         preferenceBackgroundColor.setSummary(preferenceBackgroundColor.getText());
         preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
         preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
+        preferenceBackgroundImage.setSummary(preferenceBackgroundImage.getText());
         
         getPreferenceScreen().
         	getSharedPreferences().
@@ -129,8 +135,8 @@ public class ApplicationSettings extends PreferenceActivity
 	@Override
 	public void onSharedPreferenceChanged
 		(
-				SharedPreferences sharedPreferences, 
-				String            key
+			SharedPreferences sharedPreferences, 
+			String            key
 		) {
 
 		if (key.equals(keyTitle)) {
@@ -147,6 +153,8 @@ public class ApplicationSettings extends PreferenceActivity
             preferenceStrokeWidth.setSummary(preferenceStrokeWidth.getText());
         } else if (key.equals(keyStrokeColor)) {
             preferenceStrokeColor.setSummary(preferenceStrokeColor.getText());
-        }
+        } else if (key.equals(keyBackgroundImage)) {
+        	preferenceBackgroundImage.setSummary(preferenceBackgroundImage.getText());
+		}
 	}
 }

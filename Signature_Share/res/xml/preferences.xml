@@ -6,7 +6,7 @@
     
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/Title"
 			android:title="@string/Title"
 			android:key="@string/key_Title" 
@@ -15,7 +15,7 @@
 		
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/Width"
 			android:title="@string/Width"
 			android:key="@string/key_Width" 
@@ -24,7 +24,7 @@
 		
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/Height"
 			android:title="@string/Height"
 			android:key="@string/key_Height" 
@@ -39,20 +39,29 @@
 	    
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/BackgroundColor"
 			android:title="@string/BackgroundColor"
 			android:key="@string/key_BackgroundColor" 
 			android:maxLength="8" 
 			android:defaultValue="@string/default_value_BackgroundColor"
-		/>	    
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/BackgroundImage"
+			android:title="@string/BackgroundImage"
+			android:key="@string/key_BackgroundImage" 
+			android:defaultValue="@string/default_value_BackgroundImage"
+		/>
 	    
 	</PreferenceCategory>
     
     <PreferenceCategory android:title="@string/Pen">
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/StrokeWidth"
 			android:title="@string/StrokeWidth"
 			android:key="@string/key_StrokeWidth" 
@@ -62,7 +71,7 @@
 		/>
 		<EditTextPreference 
 			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@string/Set" 
+			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/StrokeColor"
 			android:title="@string/StrokeColor"
 			android:key="@string/key_StrokeColor" 

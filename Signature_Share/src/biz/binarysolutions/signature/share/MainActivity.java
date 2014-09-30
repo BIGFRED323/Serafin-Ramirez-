@@ -305,6 +305,8 @@ public class MainActivity extends ListActivity {
 				String keyHeight      = "biz.binarysolutions.signature.Height";
 				String keyBackgroundColor = 
 					"biz.binarysolutions.signature.BackgroundColor";
+				String keyBackgroundImage = 
+					"biz.binarysolutions.signature.BackgroundImage";
 				
 				String fileName = getFileName();
 				
@@ -314,7 +316,11 @@ public class MainActivity extends ListActivity {
 				boolean crop        = preferencesHandler.getCrop();
 				String  width       = preferencesHandler.getWidth();
 				String  height      = preferencesHandler.getHeight();
-				String  backgroundColor = preferencesHandler.getBackgroundColor();
+				String  backgroundColor = 
+					preferencesHandler.getBackgroundColor();
+				String  backgroundImage = 
+					preferencesHandler.getBackgroundImage();
+				
 				
 		        intent.putExtra(keyCode, "");
 		        intent.putExtra(keyFileName, fileName);
@@ -325,6 +331,7 @@ public class MainActivity extends ListActivity {
 		        intent.putExtra(keyWidth, width);
 		        intent.putExtra(keyHeight, height);
 		        intent.putExtra(keyBackgroundColor, backgroundColor);
+		        intent.putExtra(keyBackgroundImage, backgroundImage);
 		        
 		        intent.setComponent(
 		    		new ComponentName(

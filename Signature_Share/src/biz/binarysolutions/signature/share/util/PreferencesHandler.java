@@ -112,6 +112,18 @@ public class PreferencesHandler {
 		
 		return preferences.getString(key, defaultValue);
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getBackgroundImage() {
+		
+		String key          = activity.getString(R.string.key_BackgroundImage);
+		String defaultValue = activity.getString(R.string.default_value_BackgroundImage);
+		
+		return preferences.getString(key, defaultValue);
+	}	
 
 	/**
 	 * 
