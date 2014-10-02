@@ -36,7 +36,7 @@
 	<string name="default_value_ShowWarning">true</string>
 	<string name="default_value_BackgroundImage"></string>
 	<!-- 
-	<string name="default_value_BackgroundImage">http://binarysolutions.biz/wp-content/uploads/2013/04/final-logo7.png</string>
+	<string name="default_value_BackgroundImage">http://binarysolutions.biz/logo.png</string>
 	-->
 	
 </resources>
